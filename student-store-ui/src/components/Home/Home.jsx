@@ -1,12 +1,12 @@
 import * as React from "react"
 import "./Home.css"
-import ProductCard from "../ProductCard/ProductCard"
+import ProductGrid from "../ProductGrid/ProductGrid"
 
 export default function Home() {
   return (
     <div className="home">
       <p>Home</p>
-      <ProductCard />
+      <ProductGrid />
     </div>
   )
 }
