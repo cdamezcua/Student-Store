@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./ProductCard.css";
-import { Card, Image, Group, Button, Badge, Rating} from "@mantine/core";
+import { Card, Image, Group, Button, Badge, Rating } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({
@@ -30,16 +30,38 @@ export default function ProductCard({
         <Group position="apart">
           <p className="product-name">{product.name}</p>
           <Button.Group>
-          <Button className="remove" variant="outline" onClick={handleRemoveItemFromCart(product.id)}>-</Button>
-            <Button className="add" variant="outline" onClick={handleAddItemToCart(product.id)}>+</Button>
+            <Button
+              className="remove"
+              variant="outline"
+              onClick={() => {
+                handleRemoveItemFromCart(product.id);
+              }}
+            >
+              -
+            </Button>
+            <Button
+              className="add"
+              variant="outline"
+              onClick={() => {
+                handleAddItemToCart(product.id);
+              }}
+            >
+              +
+            </Button>
           </Button.Group>
         </Group>
         <Group position="apart">
-          {showDescription ? (<p className="product-description">{product.description}</p>) : null}
+          {showDescription ? (
+            <p className="product-description">{product.description}</p>
+          ) : null}
         </Group>
         <Group position="apart">
           <p className="product-price">${product.price.toFixed(2)}</p>
-          {quantity > 0 ? <Badge size="lg" color="blue">{quantity}</Badge> : null}
+          {quantity > 0 ? (
+            <Badge size="lg" color="blue">
+              {quantity}
+            </Badge>
+          ) : null}
         </Group>
       </Card.Section>
     </Card>
