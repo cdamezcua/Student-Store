@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import "./App.css";
 import { useState, useEffect } from "react";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -30,6 +31,7 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
+          <ProductDetail />
           <Home
             products={products}
             handleAddItemToCart={(productId) => {
