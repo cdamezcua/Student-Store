@@ -8,7 +8,7 @@ export default function ProductCard({
   productId,
   quantity,
   handleAddItemToCart = () => {},
-  handleRemoveItemFromCart = () => {},
+  handleRemoveItemToCart = () => {},
   showDescription = true,
 }) {
   return (
@@ -34,7 +34,7 @@ export default function ProductCard({
               className="remove"
               variant="outline"
               onClick={() => {
-                handleRemoveItemFromCart(product.id);
+                handleRemoveItemToCart(product.id);
               }}
             >
               -
