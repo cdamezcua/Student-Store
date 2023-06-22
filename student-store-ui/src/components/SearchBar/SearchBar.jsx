@@ -16,7 +16,7 @@ export default function SearchBar({ searchParameter, setSearchParameter }) {
             event.preventDefault();
           }
         }}
-        inputStyle={{ textAlign: "end" }}
+        inputsstyle={{ textAlign: "end" }}
       />
     </form>
   );
