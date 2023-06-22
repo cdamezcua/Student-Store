@@ -7,6 +7,7 @@ import "./App.css";
 
 export default function App() {
   const [products, setProducts] = React.useState([]);
+  const [shoppingCart, setShoppingCart] = React.useState({});
   React.useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -28,7 +29,34 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          <Home products={products} />
+          <Home
+            products={products}
+            handleAddItemToCart={(productId) => {
+              setShoppingCart((prev) => {
+                const newCart = { ...prev };
+                newCart[productId] =
+                  newCart[productId] === undefined ? 1 : newCart[productId] + 1;
+                console.log("New cart: ", newCart);
+                return newCart;
+              });
+            }}
+            handleRemoveItemToCart={(productId) => {
+              setShoppingCart((prev) => {
+                const newCart = { ...prev };
+                if (newCart[productId] === undefined) {
+                  console.log("Nothing to remove");
+                  return newCart;
+                }
+                if (newCart[productId] > 1) {
+                  newCart[productId] = newCart[productId] - 1;
+                } else if (newCart[productId] === 1) {
+                  delete newCart[productId];
+                }
+                console.log("New cart: ", newCart);
+                return newCart;
+              });
+            }}
+          />
         </main>
       </BrowserRouter>
     </div>
