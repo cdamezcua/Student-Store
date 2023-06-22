@@ -1,10 +1,7 @@
 import * as React from "react";
 import "./Home.css";
 import ProductGrid from "../ProductGrid/ProductGrid";
-import CategoryMenu from "../CategoryMenu/CategoryMenu";
-import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
-import Hero from "../Hero/Hero";
 import About from "../About/About";
 import ContactUs from "../ContactUs/ContactUs";
 
@@ -12,20 +9,11 @@ export default function Home({
   products,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  searchParameter,
+  selectedCategory,
 }) {
-  const [selectedCategory, setSelectedCategory] = useState("all-categories");
-  const [searchParameter, setSearchParameter] = useState("");
   return (
     <div className="home">
-      <Hero />
-      <SearchBar
-        searchParameter={searchParameter}
-        setSearchParameter={setSearchParameter}
-      />
-      <CategoryMenu
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
       <ProductGrid
         products={products.filter((product) => {
           let meetsSearchCriteria = true;

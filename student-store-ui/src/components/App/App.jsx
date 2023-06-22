@@ -7,10 +7,12 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import { Route, Routes } from "react-router-dom";
+import Hero from "../Hero/Hero";
+import SearchBar from "../SearchBar/SearchBar";
+import CategoryMenu from "../CategoryMenu/CategoryMenu";
 
 export default function App() {
   const [products, setProducts] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -26,6 +28,7 @@ export default function App() {
     fetchProducts();
   }, []);
   const [shoppingCart, setShoppingCart] = useState({});
+  const [shoppingCartTotal, setshoppingCartTotal] = useState(0);
   const handleAddItemToCart = (productId) => {
     setShoppingCart((prev) => {
       const newCart = { ...prev };
@@ -37,7 +40,9 @@ export default function App() {
       console.log("New cart: ", newCart);
       return newCart;
     });
-    setCartTotal((prev) => prev + products.find((p) => p.id === productId).price);
+    setshoppingCartTotal(
+      (prev) => prev + products.find((p) => p.id === productId).price
+    );
   };
   const handleRemoveItemToCart = (productId) => {
     setShoppingCart((prev) => {
@@ -55,7 +60,9 @@ export default function App() {
       return newCart;
     });
   };
-  console.log("New cart total: ", cartTotal);
+  const [searchParameter, setSearchParameter] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all-categories");
+  console.log("New cart total: ", shoppingCartTotal);
   return (
     <div className="app">
       <BrowserRouter>
@@ -63,6 +70,15 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
+          <Hero />
+          <SearchBar
+            searchParameter={searchParameter}
+            setSearchParameter={setSearchParameter}
+          />
+          <CategoryMenu
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
           <Routes>
             <Route
               path="/"
@@ -71,6 +87,8 @@ export default function App() {
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemToCart={handleRemoveItemToCart}
+                  searchParameter={searchParameter}
+                  selectedCategory={selectedCategory}
                 />
               }
             />
