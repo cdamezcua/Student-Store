@@ -1,6 +1,14 @@
 import * as React from "react";
 import "./ProductCard.css";
-import { Card, Image, Group, Button, Badge, Rating } from "@mantine/core";
+import {
+  Card,
+  Image,
+  Group,
+  Button,
+  Badge,
+  Rating,
+  AspectRatio,
+} from "@mantine/core";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({
@@ -20,11 +28,13 @@ export default function ProductCard({
       withBorder
     >
       <Card.Section>
-        <div className="media">
-          <Link to={`/products/${product.id}`}>
-            <Image src={product.image} height={200} />
-          </Link>
-        </div>
+        <AspectRatio ratio={3 / 2}>
+          <div className="media">
+            <Link to={`/products/${product.id}`}>
+              <Image src={product.image} />
+            </Link>
+          </div>
+        </AspectRatio>
       </Card.Section>
       <Card.Section>
         <Group position="apart">

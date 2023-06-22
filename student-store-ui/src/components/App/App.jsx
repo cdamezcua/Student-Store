@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import Hero from "../Hero/Hero";
 import SearchBar from "../SearchBar/SearchBar";
 import CategoryMenu from "../CategoryMenu/CategoryMenu";
+import { Container } from "@mantine/core";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -70,33 +71,40 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          <Hero />
-          <SearchBar
-            searchParameter={searchParameter}
-            setSearchParameter={setSearchParameter}
-          />
-          <CategoryMenu
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-          />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  products={products}
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemToCart={handleRemoveItemToCart}
-                  searchParameter={searchParameter}
-                  selectedCategory={selectedCategory}
-                />
-              }
+          <Container size="lg">
+            <Hero />
+            <SearchBar
+              searchParameter={searchParameter}
+              setSearchParameter={setSearchParameter}
             />
-            <Route path="/products/:productId" element={<ProductDetail 
-            handleAddItemToCart={handleAddItemToCart}
-            handleRemoveItemToCart={handleRemoveItemToCart}
-            />} />
-          </Routes>
+            <CategoryMenu
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Home
+                    products={products}
+                    handleAddItemToCart={handleAddItemToCart}
+                    handleRemoveItemToCart={handleRemoveItemToCart}
+                    searchParameter={searchParameter}
+                    selectedCategory={selectedCategory}
+                  />
+                }
+              />
+              <Route
+                path="/products/:productId"
+                element={
+                  <ProductDetail
+                    handleAddItemToCart={handleAddItemToCart}
+                    handleRemoveItemToCart={handleRemoveItemToCart}
+                  />
+                }
+              />
+            </Routes>
+          </Container>
         </main>
       </BrowserRouter>
     </div>
