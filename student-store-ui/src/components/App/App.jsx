@@ -6,6 +6,21 @@ import Home from "../Home/Home";
 import "./App.css";
 
 export default function App() {
+  const [products, setProducts] = React.useState([]);
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          "https://codepath-store-api.herokuapp.com/store"
+        );
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchProducts();
+  }, []);
   return (
     <div className="app">
       <BrowserRouter>
