@@ -4,6 +4,7 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
+import Hero from "../Hero/Hero";
 
 export default function Home({
   products,
@@ -14,7 +15,7 @@ export default function Home({
   const [searchParameter, setSearchParameter] = useState("");
   return (
     <div className="home">
-      <p>Home</p>
+      <Hero />
       <SearchBar
         searchParameter={searchParameter}
         setSearchParameter={setSearchParameter}
