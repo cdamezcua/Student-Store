@@ -15,7 +15,10 @@ export default function Home({
   return (
     <div className="home">
       <p>Home</p>
-      <SearchBar searchParameter={searchParameter} setSearchParameter={setSearchParameter} />
+      <SearchBar
+        searchParameter={searchParameter}
+        setSearchParameter={setSearchParameter}
+      />
       <CategoryMenu
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
@@ -26,11 +29,7 @@ export default function Home({
           if (searchParameter !== "") {
             const searchParameterLower = searchParameter.toLowerCase();
             const productNameLower = product.name.toLowerCase();
-            const productDescriptionLower = product.description.toLowerCase();
-            if (
-              !productNameLower.includes(searchParameterLower) &&
-              !productDescriptionLower.includes(searchParameterLower)
-            ) {
+            if (!productNameLower.includes(searchParameterLower)) {
               meetsSearchCriteria = false;
             }
           }
