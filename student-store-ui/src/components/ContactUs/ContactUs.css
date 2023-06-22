@@ -1,0 +1,18 @@
+.contact-us {
+  background-color: #2c4047;
+}
+
+.contact-us .contact-us-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-us .contact-us-text {
+  padding: 2rem;
+}
+
+.contact-us .contact-us-img-container img {
+  width: 244px;
+  height: 244px;
+}

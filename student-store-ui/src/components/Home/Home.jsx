@@ -6,6 +6,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
+import ContactUs from "../ContactUs/ContactUs";
 
 export default function Home({
   products,
@@ -46,6 +47,7 @@ export default function Home({
         handleRemoveItemToCart={handleRemoveItemToCart}
       />
       <About />
+      <ContactUs />
     </div>
   );
 }
