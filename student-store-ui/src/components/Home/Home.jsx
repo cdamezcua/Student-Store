@@ -5,6 +5,7 @@ import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import Hero from "../Hero/Hero";
+import About from "../About/About";
 
 export default function Home({
   products,
@@ -44,6 +45,7 @@ export default function Home({
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}
       />
+      <About />
     </div>
   );
 }
