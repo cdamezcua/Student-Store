@@ -3,8 +3,7 @@ import "./CategoryMenu.css";
 import { Tabs } from "@mantine/core";
 import { useState } from "react";
 
-export default function CategoryMenu() {
-  const [selectedCategory, setSelectedCategory] = useState("all-categories");
+export default function CategoryMenu({selectedCategory, setSelectedCategory}) {
   return (
     <Tabs
       color="teal"

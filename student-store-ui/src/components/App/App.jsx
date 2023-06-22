@@ -4,11 +4,12 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import "./App.css";
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const [products, setProducts] = React.useState([]);
-  const [shoppingCart, setShoppingCart] = React.useState({});
-  React.useEffect(() => {
+  const [products, setProducts] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState({});
+  useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
