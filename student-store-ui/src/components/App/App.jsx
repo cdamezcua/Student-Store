@@ -92,7 +92,10 @@ export default function App() {
                 />
               }
             />
-            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route path="/products/:productId" element={<ProductDetail 
+            handleAddItemToCart={handleAddItemToCart}
+            handleRemoveItemToCart={handleRemoveItemToCart}
+            />} />
           </Routes>
         </main>
       </BrowserRouter>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./ProductDetail.css";
 import { useState, useEffect } from "react";
+import ProductView from "../ProductView/ProductView";
 
 export default function ProductDetail({
   handleAddItemToCart,
@@ -25,7 +26,15 @@ export default function ProductDetail({
   console.log(product);
   return (
     <div className="product-detail">
-      <h1>Hola</h1>
+      {product ? (
+        <ProductView
+          product={product}
+          productId={productId}
+          quantity={0}
+          handleAddItemToCart={handleAddItemToCart}
+          handleRemoveItemToCart={handleRemoveItemToCart}
+        />
+      ) : null}
     </div>
   );
 }

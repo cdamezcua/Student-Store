@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 
 export default function ProductCard({
   product,
+  productId,
   quantity,
   handleAddItemToCart = () => {},
   handleRemoveItemToCart = () => {},
-  showDescription = true,
+  showDescription = false,
 }) {
   return (
     <Card
