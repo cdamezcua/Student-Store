@@ -14,7 +14,7 @@ export default function App() {
           "https://codepath-store-api.herokuapp.com/store"
         );
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.products);
       } catch (error) {
         console.error(error);
       }
@@ -28,7 +28,7 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          <Home />
+          <Home products={products} />
         </main>
       </BrowserRouter>
     </div>

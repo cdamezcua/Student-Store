@@ -4,18 +4,9 @@ import { Card, Image, Group, Button, Badge, Rating} from "@mantine/core";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({
-  product = {
-    id: 1,
-    name: "Rice Krispies",
-    category: "food",
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
-    source: "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
-    description:
-      "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
-    price: 0.99,
-  },
-  productId = 1,
-  quantity = 1,
+  product,
+  productId,
+  quantity,
   handleAddItemToCart = () => {},
   handleRemoveItemFromCart = () => {},
   showDescription = true,
