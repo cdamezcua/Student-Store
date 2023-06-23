@@ -34,10 +34,10 @@ export default function Footer() {
   return (
     <div className="footer">
       {footerInfo.map((info) => (
-        <div className="footer-column">
-          <h3>{info.title}</h3>
+        <div key={"column-" + info.title} className="footer-column">
+          <h3 key={info.title}>{info.title}</h3>
           {info.links.map((link) => (
-            <p>{link}</p>
+            <p key={link}>{link}</p>
           ))}
         </div>
       ))}
