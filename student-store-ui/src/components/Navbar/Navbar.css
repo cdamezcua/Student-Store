@@ -1,0 +1,12 @@
+.navbar {
+  background-color: #2c4047;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 4rem;
+}
+
+.navbar .link {
+  color: #ffffff;
+  text-decoration: none;
+}
