@@ -30,7 +30,6 @@ export default function App() {
     fetchProducts();
   }, []);
   const [shoppingCart, setShoppingCart] = useState({});
-  const [shoppingCartTotal, setshoppingCartTotal] = useState(0);
   const handleAddItemToCart = (productId) => {
     setShoppingCart((prev) => {
       const newCart = { ...prev };
@@ -42,9 +41,6 @@ export default function App() {
       console.log("New cart: ", newCart);
       return newCart;
     });
-    setshoppingCartTotal(
-      (prev) => prev + products.find((p) => p.id === productId).price
-    );
   };
   const handleRemoveItemToCart = (productId) => {
     setShoppingCart((prev) => {
@@ -68,7 +64,6 @@ export default function App() {
   const handleOnToggle = () => {
     setIsOpen((prev) => !prev);
   };
-  console.log("New cart total: ", shoppingCartTotal);
   return (
     <div className="app">
       <BrowserRouter>
