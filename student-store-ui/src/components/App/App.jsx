@@ -64,6 +64,10 @@ export default function App() {
   };
   const [searchParameter, setSearchParameter] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all-categories");
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOnToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
   console.log("New cart total: ", shoppingCartTotal);
   return (
     <div className="app">
@@ -71,7 +75,12 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
+          <Sidebar 
+          isOpen={isOpen}
+          shoppingCart={shoppingCart}
+          products={products}
+          handleOnToggle={handleOnToggle}
+          />
           <Container size="lg">
             <Hero />
             <SearchBar

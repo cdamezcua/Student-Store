@@ -8,12 +8,12 @@ export default function Sidebar({
   checkoutForm,
   handleOnCheckoutFormChange = () => {},
   handleOnSubmitCheckoutForm = () => {},
-  handleOnToggle,
+  handleOnToggle= () => {},
 }) {
   return (
-    <section className="sidebar">
-      <button className="toggle-button">
-      <i class="material-icons md-48">add_shopping_cart</i>
+    <section className={`sidebar ${isOpen ? "open" : ""}`}>
+      <button className="toggle-button" onClick={handleOnToggle}>
+        <i class="material-icons md-48">{isOpen ? "arrow_back" : "arrow_forward"}</i>
       </button>
     </section>
   );
