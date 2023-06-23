@@ -12,6 +12,11 @@
   padding: 2rem;
 }
 
+.contact-us .contact-us-text p {
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
 .contact-us .contact-us-img-container img {
   width: 244px;
   height: 244px;
