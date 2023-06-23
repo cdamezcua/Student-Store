@@ -6,9 +6,15 @@ export default function Sidebar({
   shoppingCart,
   products,
   checkoutForm,
-  handleOnCheckoutFormChange,
-  handleOnSubmitCheckoutForm,
+  handleOnCheckoutFormChange = () => {},
+  handleOnSubmitCheckoutForm = () => {},
   handleOnToggle,
 }) {
-  return <section className="sidebar"><p>Sidebar</p></section>;
+  return (
+    <section className="sidebar">
+      <button className="toggle-button">
+      <i class="material-icons md-48">add_shopping_cart</i>
+      </button>
+    </section>
+  );
 }
