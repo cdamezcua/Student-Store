@@ -6,6 +6,7 @@ export default function ProductGrid({
   products,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  shoppingCart
 }) {
   return (
     <div className="product-grid">
@@ -18,6 +19,7 @@ export default function ProductGrid({
             handleAddItemToCart={handleAddItemToCart}
             handleRemoveItemToCart={handleRemoveItemToCart}
             showDescription={false}
+            quantity={shoppingCart[product.id] || 0}
           />
         );
       })}

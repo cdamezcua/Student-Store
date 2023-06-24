@@ -99,6 +99,7 @@ export default function App() {
                       handleRemoveItemToCart={handleRemoveItemToCart}
                       searchParameter={searchParameter}
                       selectedCategory={selectedCategory}
+                      shoppingCart={shoppingCart}
                     />
                   </Container>
                   <Footer />
@@ -112,6 +113,7 @@ export default function App() {
                   <ProductDetail
                     handleAddItemToCart={handleAddItemToCart}
                     handleRemoveItemToCart={handleRemoveItemToCart}
+                    shoppingCart={shoppingCart}
                   />
                 </Container>
               }

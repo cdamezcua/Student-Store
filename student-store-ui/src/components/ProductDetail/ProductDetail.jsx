@@ -6,6 +6,7 @@ import ProductView from "../ProductView/ProductView";
 export default function ProductDetail({
   handleAddItemToCart,
   handleRemoveItemToCart,
+  shoppingCart,
 }) {
   const productId = window.location.pathname.split("/").pop();
   const [product, setProduct] = React.useState(null);
@@ -23,14 +24,13 @@ export default function ProductDetail({
     };
     fetchProduct();
   }, []);
-  console.log(product);
   return (
     <div className="product-detail">
       {product ? (
         <ProductView
           product={product}
           productId={productId}
-          quantity={0}
+          quantity={shoppingCart[product.id] || 0}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemToCart={handleRemoveItemToCart}
         />
