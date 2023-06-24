@@ -12,6 +12,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import { Container } from "@mantine/core";
 import Footer from "../Footer/Footer";
+import SortSwitch from "../SortSwitch/SortSwitch";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -86,6 +87,7 @@ export default function App() {
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
             />
+            <SortSwitch setProducts={setProducts} />
           </Container>
           <Routes>
             <Route
