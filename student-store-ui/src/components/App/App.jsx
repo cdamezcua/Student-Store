@@ -20,7 +20,7 @@ export default function App() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://codepath-store-api.herokuapp.com/store"
+          "http://localhost:3001/products"
         );
         const data = await response.json();
         setProducts(data.products);
