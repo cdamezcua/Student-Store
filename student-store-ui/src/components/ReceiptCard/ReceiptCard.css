@@ -1,0 +1,37 @@
+.receipt-card {
+  margin-top: 1rem;
+}
+
+.receipt-card .receipt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.receipt-card table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.receipt-card thead {
+  border-top: 2px solid black;
+  font-weight: bold;
+}
+
+.receipt-card tbody {
+  border-bottom: 2px solid black;
+}
+
+.receipt-card tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.receipt-card tfoot tr:last-child {
+  border-top: 2px solid black;
+  font-weight: bold;
+}
+
+.receipt-card p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}

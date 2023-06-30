@@ -1,11 +1,11 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
-export default function ShoppingCart({ isOpen, shoppingCart = {}, products }) {
+export default function ShoppingCart({ shoppingCart = {}, products }) {
   return (
-    <section className={`shopping-cart ${isOpen ? "open" : ""}`}>
-      {isOpen ? <h2 className="shopping-cart-title">Shopping Cart</h2> : null}
-      {isOpen && Object.keys(shoppingCart).length ? (
+    <section className="shopping-cart">
+      <h2 className="shopping-cart-title">Shopping Cart</h2>
+      {Object.keys(shoppingCart).length ? (
         <table className="shopping-cart-table">
           <thead className="shopping-cart-header">
             <tr>
@@ -89,7 +89,7 @@ export default function ShoppingCart({ isOpen, shoppingCart = {}, products }) {
           </tfoot>
         </table>
       ) : null}
-      {isOpen && !Object.keys(shoppingCart).length ? (
+      {!Object.keys(shoppingCart).length ? (
         <p className="shopping-cart-empty">
           No items added to cart yet. Start shopping now!
         </p>

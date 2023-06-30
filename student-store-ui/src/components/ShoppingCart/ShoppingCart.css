@@ -1,3 +1,9 @@
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .shopping-cart-title {
   color: #ffffff;
 }

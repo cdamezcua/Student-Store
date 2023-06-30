@@ -1,15 +1,19 @@
 import * as React from "react";
 import "./Sidebar.css";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import ReceiptCard from "../ReceiptCard/ReceiptCard";
 
 export default function Sidebar({
   isOpen,
   shoppingCart = {},
   products,
   checkoutForm,
-  handleOnCheckoutFormChange = () => {},
-  handleOnSubmitCheckoutForm = () => {},
-  handleOnToggle = () => {},
+  handleOnCheckoutFormChange,
+  handleOnSubmitCheckoutForm,
+  handleOnToggle,
+  checkoutFormErrorMessage,
+  order,
 }) {
   return (
     <section className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -18,11 +22,26 @@ export default function Sidebar({
           {isOpen ? "arrow_back" : "arrow_forward"}
         </i>
       </button>
-      <ShoppingCart
-        isOpen={isOpen}
-        shoppingCart={shoppingCart}
-        products={products}
-      />
+      {isOpen ? (
+        <ShoppingCart
+          isOpen={isOpen}
+          shoppingCart={shoppingCart}
+          products={products}
+        />
+      ) : null}
+      {isOpen && Object.keys(shoppingCart).length ? (
+        <CheckoutForm
+          shoppingCart={shoppingCart}
+          products={products}
+          checkoutForm={checkoutForm}
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+          checkoutFormErrorMessage={checkoutFormErrorMessage}
+        />
+      ) : null}
+      {isOpen && order !== null ? (
+        <ReceiptCard order={order} isDetailed={true} />
+      ) : null}
     </section>
   );
 }

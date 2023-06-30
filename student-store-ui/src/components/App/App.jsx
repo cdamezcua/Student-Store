@@ -19,9 +19,7 @@ export default function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3001/products"
-        );
+        const response = await fetch("http://localhost:3001/products");
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
@@ -65,17 +63,83 @@ export default function App() {
   const handleOnToggle = () => {
     setIsOpen((prev) => !prev);
   };
+  const [checkoutForm, setCheckoutForm] = useState({
+    name: "",
+    email: "",
+    acceptTerms: false,
+  });
+  const handleOnCheckoutFormChange = (event) => {
+    const { name, value } = event.target;
+    setCheckoutForm((prev) => {
+      let ans = { ...prev };
+      if (name === "acceptTerms") {
+        ans[name] = !ans[name];
+      } else {
+        ans[name] = value;
+      }
+      return ans;
+    });
+  };
+  const [sidebarOrder, setSidebarOrder] = useState(null);
+  const fetchOrder = async () => {
+    try {
+      console.log("fetching order");
+      const response = await fetch("http://localhost:3001/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: {
+            name: checkoutForm.name,
+            email: checkoutForm.email,
+          },
+          shoppingCart: shoppingCart,
+        }),
+      });
+      const order = await response.json();
+      setSidebarOrder(order);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const [checkoutFormErrorMessage, setCheckoutFormErrorMessage] = useState([]);
+  const handleOnSubmitCheckoutForm = (event) => {
+    event.preventDefault();
+    let ans = [];
+    if (checkoutForm.name === "") {
+      ans.push("Please enter your name");
+    }
+    if (checkoutForm.email === "") {
+      ans.push("Please enter your email");
+    }
+    if (checkoutForm.acceptTerms === false) {
+      ans.push("Please accept the terms and conditions");
+    }
+    setCheckoutFormErrorMessage(ans);
+    if (ans.length === 0) {
+      fetchOrder();
+      setShoppingCart({});
+      setCheckoutForm({ name: "", email: "", acceptTerms: false });
+    }
+  };
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar 
-          isOpen={isOpen}
-          shoppingCart={shoppingCart}
-          products={products}
-          handleOnToggle={handleOnToggle}
+          <Sidebar
+            isOpen={isOpen}
+            shoppingCart={shoppingCart}
+            products={products}
+            checkoutForm={checkoutForm}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            handleOnToggle={handleOnToggle}
+            checkoutFormErrorMessage={checkoutFormErrorMessage}
+            order={sidebarOrder}
           />
           <Container size="lg">
             <Hero />

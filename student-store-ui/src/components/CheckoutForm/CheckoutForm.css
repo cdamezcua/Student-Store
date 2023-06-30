@@ -1,0 +1,36 @@
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-form-title {
+  color: #ffffff;
+  align-self: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group .checkout-btn {
+  align-self: flex-start;
+  margin-top: 1rem;
+  background-color: #2c4047;
+  color: #ffffff;
+  border: #ffffff 1px solid;
+  padding: 0.5rem 1rem;
+}
+
+.ckeckbox-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+label {
+  color: #ffffff;
+}
+
+.error-message {
+  color: #ff0000;
+}
