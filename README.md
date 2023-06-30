@@ -34,13 +34,17 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ## *Week 3* Application Features
 
+<a href="https://www.loom.com/share/126ac98b54414fc9bf65a27e29b4d063">
+  <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/126ac98b54414fc9bf65a27e29b4d063-with-play.gif">
+</a>
+
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
