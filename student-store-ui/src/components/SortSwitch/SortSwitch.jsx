@@ -21,5 +21,5 @@ export default function SortSwitch({ setProducts }) {
       });
     }
   };
-  return <Switch checked={checked} onChange={(event) => handleChange(event)} label="Sort increasing by price" />;
+  return <Switch className="sort-switch"checked={checked} onChange={(event) => handleChange(event)} label="Sort increasing by price" />;
 }
