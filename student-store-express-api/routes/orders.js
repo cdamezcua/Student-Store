@@ -39,4 +39,10 @@ router.get("/", (req, res) => {
   res.send(ans);
 });
 
+router.get("/:id", (req, res) => {
+  const ans = {};
+  ans.order = storage.get("orders").find({ id: parseInt(req.params.id) }).value();
+  res.send(ans);
+});
+
 export default router;
