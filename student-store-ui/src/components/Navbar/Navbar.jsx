@@ -25,6 +25,9 @@ export default function Navbar() {
           <Link to="/orders" className="link">
             Orders
           </Link>
+          <Link to="/wishlist" className="link">
+            Wishlist
+          </Link>
         </Group>
       </Container>
     </nav>

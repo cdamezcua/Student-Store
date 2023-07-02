@@ -7,6 +7,9 @@ export default function ProductDetail({
   handleAddItemToCart,
   handleRemoveItemToCart,
   shoppingCart,
+  wishlist,
+  handleAddItemToWishlist,
+  handleRemoveItemToWishlist,
 }) {
   const productId = window.location.pathname.split("/").pop();
   const [product, setProduct] = React.useState(null);
@@ -33,6 +36,9 @@ export default function ProductDetail({
           quantity={shoppingCart[product.id] || 0}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemToCart={handleRemoveItemToCart}
+          wishlist={wishlist}
+          handleAddItemToWishlist={handleAddItemToWishlist}
+          handleRemoveItemToWishlist={handleRemoveItemToWishlist}
         />
       ) : null}
     </div>

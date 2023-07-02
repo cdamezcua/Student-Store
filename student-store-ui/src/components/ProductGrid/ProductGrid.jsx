@@ -6,7 +6,10 @@ export default function ProductGrid({
   products,
   handleAddItemToCart,
   handleRemoveItemToCart,
-  shoppingCart
+  shoppingCart,
+  wishlist,
+  handleAddItemToWishlist,
+  handleRemoveItemToWishlist,
 }) {
   return (
     <div className="product-grid">
@@ -20,6 +23,9 @@ export default function ProductGrid({
             handleRemoveItemToCart={handleRemoveItemToCart}
             showDescription={false}
             quantity={shoppingCart[product.id] || 0}
+            isOnWishlist={wishlist[product.id] || false}
+            handleAddItemToWishlist={handleAddItemToWishlist}
+            handleRemoveItemToWishlist={handleRemoveItemToWishlist}
           />
         );
       })}

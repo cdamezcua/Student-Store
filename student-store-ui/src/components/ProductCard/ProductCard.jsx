@@ -18,6 +18,9 @@ export default function ProductCard({
   handleAddItemToCart = () => {},
   handleRemoveItemToCart = () => {},
   showDescription = false,
+  isOnWishlist = false,
+  handleAddItemToWishlist = () => {},
+  handleRemoveItemToWishlist = () => {},
 }) {
   return (
     <Card
@@ -72,6 +75,21 @@ export default function ProductCard({
               {quantity}
             </Badge>
           ) : null}
+        </Group>
+        <Group position="apart">
+          <Button
+            variant={isOnWishlist ? "light" : "none"}
+            color="red"
+            onClick={() => {
+              if (isOnWishlist) {
+                handleRemoveItemToWishlist(product.id);
+              } else {
+                handleAddItemToWishlist(product.id);
+              }
+            }}
+          >
+            {isOnWishlist ? "♥️" : "♡"}
+          </Button>
         </Group>
       </Card.Section>
     </Card>

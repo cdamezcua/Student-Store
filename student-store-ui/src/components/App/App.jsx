@@ -15,6 +15,7 @@ import Footer from "../Footer/Footer";
 import SortSwitch from "../SortSwitch/SortSwitch";
 import ReceiptGrid from "../ReceiptGrid/ReceiptGrid";
 import ReceiptDetail from "../ReceiptDetail/ReceiptDetail";
+import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -31,6 +32,23 @@ export default function App() {
     fetchProducts();
   }, []);
   const [shoppingCart, setShoppingCart] = useState({});
+  const [wishlist, setWishlist] = useState({});
+  const handleAddItemToWishlist = (productId) => {
+    setWishlist((prev) => {
+      const newWishlist = { ...prev };
+      newWishlist[productId] = true;
+      console.log("New wishlist: ", newWishlist);
+      return newWishlist;
+    });
+  };
+  const handleRemoveItemToWishlist = (productId) => {
+    setWishlist((prev) => {
+      const newWishlist = { ...prev };
+      delete newWishlist[productId];
+      console.log("New wishlist: ", newWishlist);
+      return newWishlist;
+    });
+  };
   const handleAddItemToCart = (productId) => {
     setShoppingCart((prev) => {
       const newCart = { ...prev };
@@ -183,6 +201,9 @@ export default function App() {
                       searchParameter={searchParameter}
                       selectedCategory={selectedCategory}
                       shoppingCart={shoppingCart}
+                      wishlist={wishlist}
+                      handleAddItemToWishlist={handleAddItemToWishlist}
+                      handleRemoveItemToWishlist={handleRemoveItemToWishlist}
                     />
                   </Container>
                   <Footer />
@@ -210,6 +231,9 @@ export default function App() {
                       handleAddItemToCart={handleAddItemToCart}
                       handleRemoveItemToCart={handleRemoveItemToCart}
                       shoppingCart={shoppingCart}
+                      wishlist={wishlist}
+                      handleAddItemToWishlist={handleAddItemToWishlist}
+                      handleRemoveItemToWishlist={handleRemoveItemToWishlist}
                     />
                   </Container>
                 </>
@@ -249,6 +273,27 @@ export default function App() {
                     />
                     <ReceiptDetail orders={orders} />
                   </Container>
+                </>
+              }
+            />
+            <Route
+              path="/wishlist"
+              element={
+                <>
+                  <Container size="lg" className="product-grid-container">
+                    <ProductGrid
+                      products={products.filter((product) => {
+                        return wishlist[product.id] === true;
+                      })}
+                      handleAddItemToCart={handleAddItemToCart}
+                      handleRemoveItemToCart={handleRemoveItemToCart}
+                      shoppingCart={shoppingCart}
+                      wishlist={wishlist}
+                      handleAddItemToWishlist={handleAddItemToWishlist}
+                      handleRemoveItemToWishlist={handleRemoveItemToWishlist}
+                    />
+                  </Container>
+                  <Footer />
                 </>
               }
             />

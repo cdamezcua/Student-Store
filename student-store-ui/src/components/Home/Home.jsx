@@ -11,7 +11,10 @@ export default function Home({
   handleRemoveItemToCart,
   searchParameter,
   selectedCategory,
-  shoppingCart
+  shoppingCart,
+  wishlist,
+  handleAddItemToWishlist,
+  handleRemoveItemToWishlist,
 }) {
   return (
     <div className="home">
@@ -35,6 +38,9 @@ export default function Home({
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}
         shoppingCart={shoppingCart}
+        wishlist={wishlist}
+        handleAddItemToWishlist={handleAddItemToWishlist}
+        handleRemoveItemToWishlist={handleRemoveItemToWishlist}
       />
       <About />
       <ContactUs />

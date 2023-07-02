@@ -8,6 +8,9 @@ export default function ProductView({
   quantity,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  wishlist,
+  handleAddItemToWishlist,
+  handleRemoveItemToWishlist,
 }) {
   return (
     <div className="product-view">
@@ -19,6 +22,9 @@ export default function ProductView({
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}
         showDescription={true}
+        isOnWishlist={wishlist[product.id] || false}
+        handleAddItemToWishlist={handleAddItemToWishlist}
+        handleRemoveItemToWishlist={handleRemoveItemToWishlist}
       />
     </div>
   );

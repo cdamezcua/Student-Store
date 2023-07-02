@@ -513,6 +513,351 @@
       "subtotal": 7.5,
       "tax": 0.65625,
       "total": 8.15625
+    },
+    {
+      "id": 14,
+      "date": "2023-07-02T02:26:14.528Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Flamin Hot Cheetos",
+          "quantity": 2,
+          "unitPrice": 1.5,
+          "cost": 3
+        },
+        {
+          "name": "Cinnamon Rolls",
+          "quantity": 1,
+          "unitPrice": 2.99,
+          "cost": 2.99
+        },
+        {
+          "name": "Coconut Water",
+          "quantity": 1,
+          "unitPrice": 3.25,
+          "cost": 3.25
+        },
+        {
+          "name": "Fruit Medley",
+          "quantity": 1,
+          "unitPrice": 7.5,
+          "cost": 7.5
+        },
+        {
+          "name": "Bar Code Shirts",
+          "quantity": 1,
+          "unitPrice": 19.99,
+          "cost": 19.99
+        },
+        {
+          "name": "Striped Socks",
+          "quantity": 1,
+          "unitPrice": 4.99,
+          "cost": 4.99
+        },
+        {
+          "name": "Knitted Beanie",
+          "quantity": 1,
+          "unitPrice": 19.99,
+          "cost": 19.99
+        },
+        {
+          "name": "Pullover Sweater",
+          "quantity": 1,
+          "unitPrice": 4.99,
+          "cost": 4.99
+        },
+        {
+          "name": "Alpaca Wool Scarf",
+          "quantity": 1,
+          "unitPrice": 34.99,
+          "cost": 34.99
+        },
+        {
+          "name": "Apple Watch",
+          "quantity": 1,
+          "unitPrice": 399.99,
+          "cost": 399.99
+        },
+        {
+          "name": "Copper Bracelet",
+          "quantity": 1,
+          "unitPrice": 70,
+          "cost": 70
+        },
+        {
+          "name": "Mouse from 1998",
+          "quantity": 1,
+          "unitPrice": 19.98,
+          "cost": 19.98
+        },
+        {
+          "name": "Smart Glasses",
+          "quantity": 1,
+          "unitPrice": 999.99,
+          "cost": 999.99
+        }
+      ],
+      "subtotal": 1591.65,
+      "tax": 139.269375,
+      "total": 1730.919375
+    },
+    {
+      "id": 15,
+      "date": "2023-07-02T02:30:00.749Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Rice Krispies",
+          "quantity": 1,
+          "unitPrice": 0.99,
+          "cost": 0.99
+        },
+        {
+          "name": "Flamin Hot Cheetos",
+          "quantity": 1,
+          "unitPrice": 1.5,
+          "cost": 1.5
+        },
+        {
+          "name": "Cinnamon Rolls",
+          "quantity": 1,
+          "unitPrice": 2.99,
+          "cost": 2.99
+        },
+        {
+          "name": "Coconut Water",
+          "quantity": 1,
+          "unitPrice": 3.25,
+          "cost": 3.25
+        },
+        {
+          "name": "Fruit Medley",
+          "quantity": 1,
+          "unitPrice": 7.5,
+          "cost": 7.5
+        },
+        {
+          "name": "Striped Socks",
+          "quantity": 2,
+          "unitPrice": 4.99,
+          "cost": 9.98
+        },
+        {
+          "name": "Knitted Beanie",
+          "quantity": 2,
+          "unitPrice": 19.99,
+          "cost": 39.98
+        },
+        {
+          "name": "Pullover Sweater",
+          "quantity": 2,
+          "unitPrice": 4.99,
+          "cost": 9.98
+        },
+        {
+          "name": "Matching Rings",
+          "quantity": 2,
+          "unitPrice": 200,
+          "cost": 400
+        }
+      ],
+      "subtotal": 476.17,
+      "tax": 41.664875,
+      "total": 517.834875
+    },
+    {
+      "id": 16,
+      "date": "2023-07-02T02:30:10.177Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Striped Socks",
+          "quantity": 1,
+          "unitPrice": 4.99,
+          "cost": 4.99
+        },
+        {
+          "name": "Knitted Beanie",
+          "quantity": 2,
+          "unitPrice": 19.99,
+          "cost": 39.98
+        }
+      ],
+      "subtotal": 44.97,
+      "tax": 3.9348749999999995,
+      "total": 48.904875
+    },
+    {
+      "id": 17,
+      "date": "2023-07-02T02:31:29.361Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Rice Krispies",
+          "quantity": 2,
+          "unitPrice": 0.99,
+          "cost": 1.98
+        },
+        {
+          "name": "Flamin Hot Cheetos",
+          "quantity": 1,
+          "unitPrice": 1.5,
+          "cost": 1.5
+        },
+        {
+          "name": "Fruit Medley",
+          "quantity": 1,
+          "unitPrice": 7.5,
+          "cost": 7.5
+        },
+        {
+          "name": "Bar Code Shirts",
+          "quantity": 1,
+          "unitPrice": 19.99,
+          "cost": 19.99
+        },
+        {
+          "name": "Knitted Beanie",
+          "quantity": 1,
+          "unitPrice": 19.99,
+          "cost": 19.99
+        },
+        {
+          "name": "Alpaca Wool Scarf",
+          "quantity": 1,
+          "unitPrice": 34.99,
+          "cost": 34.99
+        }
+      ],
+      "subtotal": 85.94999999999999,
+      "tax": 7.520624999999998,
+      "total": 93.47062499999998
+    },
+    {
+      "id": 18,
+      "date": "2023-07-02T02:31:37.825Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Rice Krispies",
+          "quantity": 2,
+          "unitPrice": 0.99,
+          "cost": 1.98
+        }
+      ],
+      "subtotal": 1.98,
+      "tax": 0.17325,
+      "total": 2.15325
+    },
+    {
+      "id": 19,
+      "date": "2023-07-02T02:32:25.808Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Flamin Hot Cheetos",
+          "quantity": 10,
+          "unitPrice": 1.5,
+          "cost": 15
+        }
+      ],
+      "subtotal": 15,
+      "tax": 1.3125,
+      "total": 16.3125
+    },
+    {
+      "id": 20,
+      "date": "2023-07-02T02:33:32.781Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Rice Krispies",
+          "quantity": 4,
+          "unitPrice": 0.99,
+          "cost": 3.96
+        },
+        {
+          "name": "Flamin Hot Cheetos",
+          "quantity": 2,
+          "unitPrice": 1.5,
+          "cost": 3
+        },
+        {
+          "name": "Cinnamon Rolls",
+          "quantity": 1,
+          "unitPrice": 2.99,
+          "cost": 2.99
+        }
+      ],
+      "subtotal": 9.95,
+      "tax": 0.8706249999999999,
+      "total": 10.820624999999998
+    },
+    {
+      "id": 21,
+      "date": "2023-07-02T02:33:44.655Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Rice Krispies",
+          "quantity": 4,
+          "unitPrice": 0.99,
+          "cost": 3.96
+        }
+      ],
+      "subtotal": 3.96,
+      "tax": 0.3465,
+      "total": 4.3065
+    },
+    {
+      "id": 22,
+      "date": "2023-07-02T02:34:20.173Z",
+      "user": {
+        "name": "Carlos David Amezcua Canales",
+        "email": "cdamezcua@live.com.mx"
+      },
+      "shoppingCart": [
+        {
+          "name": "Coconut Water",
+          "quantity": 1,
+          "unitPrice": 3.25,
+          "cost": 3.25
+        },
+        {
+          "name": "Fruit Medley",
+          "quantity": 2,
+          "unitPrice": 7.5,
+          "cost": 15
+        }
+      ],
+      "subtotal": 18.25,
+      "tax": 1.5968749999999998,
+      "total": 19.846874999999997
     }
   ]
 }
