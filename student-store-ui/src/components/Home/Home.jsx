@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./Home.css";
 import ProductGrid from "../ProductGrid/ProductGrid";
-import { useState } from "react";
 import About from "../About/About";
 import ContactUs from "../ContactUs/ContactUs";
 

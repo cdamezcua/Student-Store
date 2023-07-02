@@ -6,14 +6,12 @@ import {
   Group,
   Button,
   Badge,
-  Rating,
   AspectRatio,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({
   product,
-  productId,
   quantity,
   handleAddItemToCart = () => {},
   handleRemoveItemToCart = () => {},

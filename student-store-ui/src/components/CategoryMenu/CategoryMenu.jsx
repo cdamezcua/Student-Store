@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./CategoryMenu.css";
 import { Tabs } from "@mantine/core";
-import { useState } from "react";
 
 export default function CategoryMenu({selectedCategory, setSelectedCategory}) {
   return (
