@@ -22,6 +22,9 @@ export default function Navbar() {
           <Link to="/#Buy" className="link">
             Buy Now
           </Link>
+          <Link to="/orders" className="link">
+            Orders
+          </Link>
         </Group>
       </Container>
     </nav>

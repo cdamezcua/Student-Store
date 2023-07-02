@@ -13,6 +13,8 @@ import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import { Container } from "@mantine/core";
 import Footer from "../Footer/Footer";
 import SortSwitch from "../SortSwitch/SortSwitch";
+import ReceiptGrid from "../ReceiptGrid/ReceiptGrid";
+import ReceiptDetail from "../ReceiptDetail/ReceiptDetail";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -58,6 +60,7 @@ export default function App() {
     });
   };
   const [searchParameter, setSearchParameter] = useState("");
+  const [emailSearchParameter, setEmailSearchParameter] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all-categories");
   const [isOpen, setIsOpen] = useState(false);
   const handleOnToggle = () => {
@@ -81,7 +84,7 @@ export default function App() {
     });
   };
   const [sidebarOrder, setSidebarOrder] = useState(null);
-  const fetchOrder = async () => {
+  const fetchSidebarOrder = async () => {
     try {
       console.log("fetching order");
       const response = await fetch("http://localhost:3001/orders", {
@@ -103,9 +106,22 @@ export default function App() {
       console.error(error);
     }
   };
-
+  const [orders, setOrders] = useState([]);
+  const fetchOrders = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/orders");
+      const data = await response.json();
+      setOrders(data.orders);
+      console.log("Se jalaron las ordenes");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    fetchOrders();
+  }, []);
   const [checkoutFormErrorMessage, setCheckoutFormErrorMessage] = useState([]);
-  const handleOnSubmitCheckoutForm = (event) => {
+  const handleOnSubmitCheckoutForm = async (event) => {
     event.preventDefault();
     let ans = [];
     if (checkoutForm.name === "") {
@@ -119,9 +135,10 @@ export default function App() {
     }
     setCheckoutFormErrorMessage(ans);
     if (ans.length === 0) {
-      fetchOrder();
+      await fetchSidebarOrder();
       setShoppingCart({});
       setCheckoutForm({ name: "", email: "", acceptTerms: false });
+      fetchOrders();
     }
   };
   return (
@@ -141,23 +158,23 @@ export default function App() {
             checkoutFormErrorMessage={checkoutFormErrorMessage}
             order={sidebarOrder}
           />
-          <Container size="lg">
-            <Hero />
-            <SearchBar
-              searchParameter={searchParameter}
-              setSearchParameter={setSearchParameter}
-            />
-            <CategoryMenu
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-            />
-            <SortSwitch setProducts={setProducts} />
-          </Container>
           <Routes>
             <Route
               path="/"
               element={
                 <>
+                  <Container size="lg">
+                    <Hero />
+                    <SearchBar
+                      searchParameter={searchParameter}
+                      setSearchParameter={setSearchParameter}
+                    />
+                    <CategoryMenu
+                      selectedCategory={selectedCategory}
+                      setSelectedCategory={setSelectedCategory}
+                    />
+                    <SortSwitch setProducts={setProducts} />
+                  </Container>
                   <Container size="lg">
                     <Home
                       products={products}
@@ -175,13 +192,64 @@ export default function App() {
             <Route
               path="/products/:productId"
               element={
-                <Container size="lg">
-                  <ProductDetail
-                    handleAddItemToCart={handleAddItemToCart}
-                    handleRemoveItemToCart={handleRemoveItemToCart}
-                    shoppingCart={shoppingCart}
-                  />
-                </Container>
+                <>
+                  <Container size="lg">
+                    <Hero />
+                    <SearchBar
+                      searchParameter={searchParameter}
+                      setSearchParameter={setSearchParameter}
+                    />
+                    <CategoryMenu
+                      selectedCategory={selectedCategory}
+                      setSelectedCategory={setSelectedCategory}
+                    />
+                    <SortSwitch setProducts={setProducts} />
+                  </Container>
+                  <Container size="lg">
+                    <ProductDetail
+                      handleAddItemToCart={handleAddItemToCart}
+                      handleRemoveItemToCart={handleRemoveItemToCart}
+                      shoppingCart={shoppingCart}
+                    />
+                  </Container>
+                </>
+              }
+            />
+            <Route
+              path="/orders"
+              element={
+                <>
+                  <Container size="lg" className="receipt-grid-container">
+                    <SearchBar
+                      searchParameter={emailSearchParameter}
+                      setSearchParameter={setEmailSearchParameter}
+                      placeholder={"Search by receipt email"}
+                    />
+                    <ReceiptGrid
+                      orders={orders.filter((order) => {
+                        return order.user.email.includes(
+                          emailSearchParameter.toLowerCase()
+                        );
+                      })}
+                    />
+                  </Container>
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/orders/:orderId"
+              element={
+                <>
+                  <Container size="lg" className="receipt-container">
+                    <SearchBar
+                      searchParameter={emailSearchParameter}
+                      setSearchParameter={setEmailSearchParameter}
+                      placeholder={"Search by receipt email"}
+                    />
+                    <ReceiptDetail orders={orders} />
+                  </Container>
+                </>
               }
             />
           </Routes>

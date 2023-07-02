@@ -2,6 +2,10 @@
   margin-top: 1rem;
 }
 
+.receipt-card .receipt-card-link {
+  text-decoration: none;
+}
+
 .receipt-card .receipt-container {
     display: flex;
     flex-direction: column;
